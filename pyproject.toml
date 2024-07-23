@@ -1,0 +1,40 @@
+[project]
+name = "name-address-quote"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Andy Weaver", email = "andrewayersweaver+github@gmail.com" }
+]
+dependencies = [
+    "openai>=1.37.0",
+    "pandas>=2.2.2",
+    "polars>=1.2.1",
+    "duckdb>=1.0.0",
+    "python-dotenv>=1.0.1",
+    "requests>=2.32.3",
+    "bs4>=0.0.2",
+    "jupyter>=1.0.0",
+    "notebook>=7.2.1",
+    "ipykernel>=6.29.5",
+]
+readme = "README.md"
+requires-python = ">= 3.8"
+license = { text = "MIT" }
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "ruff>=0.5.4",
+    "ruff-lsp>=0.0.54",
+    "mypy>=1.11.0",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/name_address_quote"]
